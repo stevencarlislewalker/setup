@@ -1,0 +1,11 @@
+Package: setup
+Type: Package
+Title: A personalized setup for R
+Version: 0.0-1
+Date: 2014-08-12
+Author: Steve
+Maintainer: Steve <steve.walker@utoronto.ca>
+Description: A personalized setup for R
+License: GPL-2
+Suggests:
+    knitr
