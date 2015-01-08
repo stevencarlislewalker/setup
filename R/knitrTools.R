@@ -15,7 +15,7 @@ runChunks <- function(doc, chunkNames) {
                        begEnd[chunkInds, "chunk.end"] - 1)
     for(i in seq_along(codeInds)) {
         codei <- as.list(suppmatLines[codeInds[[i]]])
-        eval(parse(text = codei), envir = .GlobalEnv)
+        tryCatch(eval(parse(text = codei), envir = .GlobalEnv))
     }
 }
 
