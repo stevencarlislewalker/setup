@@ -5,16 +5,16 @@
 ##' @return run chunks in \code{.GlobalEnv}
 ##' @export
 runChunks <- function(doc, chunkNames) {
-    suppmatLines <- readLines(doc)
+    docLines <- readLines(doc)
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
-                     grep, x = suppmatLines)
+                     grep, x = docLines)
     chunkInds <- sapply(chunkNames, grep,
-                        x = suppmatLines[begEnd[,"chunk.begin"]])
+                        x = docLines[begEnd[,"chunk.begin"]])
     codeInds <- mapply(":",
                        begEnd[chunkInds, "chunk.begin"] + 1,
                        begEnd[chunkInds, "chunk.end"] - 1)
     for(i in seq_along(codeInds)) {
-        codei <- as.list(suppmatLines[codeInds[[i]]])
+        codei <- as.list(docLines[codeInds[[i]]])
         tryCatch(eval(parse(text = codei), envir = .GlobalEnv))
     }
 }
@@ -25,9 +25,9 @@ runChunks <- function(doc, chunkNames) {
 ##' @return run lines in \code{.GlobalEnv}
 ##' @export
 loadData <- function(doc) {
-    suppmatLines <- readLines(doc)
+    docLines <- readLines(doc)
     loadCommands <- grep("Rda",
-                         grep("load", suppmatLines, value = TRUE),
+                         grep("load", docLines, value = TRUE),
                          value = TRUE)
     loadExpr <- lapply(loadCommands, function(i) parse(text = i))
     for(i in seq_along(loadExpr)) {
