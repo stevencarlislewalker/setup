@@ -19,6 +19,18 @@ runChunks <- function(doc, chunkNames) {
     }
 }
 
+##' Get chunk names from a knitr document
+##'
+##' @param doc character string of a \code{knitr} document
+##' @return character string vector with names of chunks (basically
+##' ... it's good enough anyways)
+##' @export
+chunkNames <- function(doc) {
+    docLines <- readLines(doc)
+    chunkBegin <- grep(knitr::all_patterns$rnw$chunk.begin, docLines, value = TRUE)
+    gsub(">>=", "", gsub("<<", "", sapply(strsplit(chunkBegin, ","), "[", 1)))
+}
+
 ##' Run all lines in a document containing \code{load} and \code{Rda}
 ##'
 ##' @param doc character string of a document name
@@ -35,3 +47,5 @@ loadData <- function(doc) {
         tryCatch(eval(loadExpr[[i]], envir = .GlobalEnv))
     }
 }
+
+
