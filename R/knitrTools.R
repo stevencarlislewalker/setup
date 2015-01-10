@@ -48,4 +48,28 @@ loadData <- function(doc) {
     }
 }
 
-
+##' Purl a subset of knitr chunks
+##'
+##' @param doc character string of a \code{knitr} document
+##' @param chunkNames character string vector of chunk names
+##' @param filePrefix character string to \code{\link{paste}} in front
+##' of \code{doc}
+##' @return writes new files
+##' @export
+purlChunks <- function(doc, chunkNames, filePrefix = ".") {
+    docShort <- paste(filePrefix, doc, sep = "")
+    docLines <- readLines(doc)
+    begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
+                     grep, x = docLines)
+    chunkInds <- sapply(chunkNames, grep,
+                        x = docLines[begEnd[,"chunk.begin"]])
+    codeInds <- mapply(":",
+                       begEnd[chunkInds, "chunk.begin"],
+                       begEnd[chunkInds, "chunk.end"])
+    outLines <- character(0)
+    for(i in seq_along(codeInds)) {
+        outLines <- c(outLines, docLines[codeInds[[i]]])
+    }
+    writeLines(outLines, docShort)
+    purl(docShort)
+}
