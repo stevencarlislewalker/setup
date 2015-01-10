@@ -1,5 +1,7 @@
 ##' Run a subset of knitr chunks
 ##'
+##' @note Every chunk must be named for consistent results
+##'
 ##' @param doc character string of a \code{knitr} document
 ##' @param chunkNames character string vector of chunk names
 ##' @return run chunks in \code{.GlobalEnv}
@@ -20,6 +22,8 @@ runChunks <- function(doc, chunkNames) {
 }
 
 ##' Get chunk names from a knitr document
+##'
+##' @note Every chunk must be named for consistent results
 ##'
 ##' @param doc character string of a \code{knitr} document
 ##' @return character string vector with names of chunks (basically
@@ -49,6 +53,8 @@ loadData <- function(doc) {
 }
 
 ##' Purl a subset of knitr chunks
+##'
+##' @note Every chunk must be named for consistent results
 ##'
 ##' @param doc character string of a \code{knitr} document
 ##' @param chunkNames character string vector of chunk names
