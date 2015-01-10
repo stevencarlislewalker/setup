@@ -7,6 +7,9 @@ changing, never any goals for stabilization.
 
 The *guiding principle* of the `setup` package is to include
 functionality that is intended *exclusively for interative sessions*.
+The recommended way to use `setup` is to
+[fork](https://help.github.com/articles/fork-a-repo/) it and modify as
+desired for your needs in interactive sessions.
 
 Current features:
 
