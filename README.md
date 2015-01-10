@@ -13,8 +13,13 @@ desired for your needs in interactive sessions.
 
 Current features:
 
-1. utilities for processing parts of `knitr` chunks
-2. alternative interface to `R`'s symbolic differentiation tools
-3. sugar for interfacing with `bash`
-4. sugar for using uniform distributions over subsets of the integers
-5. yes i really want to quit!
+1. [utilities](https://github.com/stevencarlislewalker/setup/blob/master/R/knitrTools.R)
+   for processing parts of `knitr` chunks
+2. [alternative interface](https://github.com/stevencarlislewalker/setup/blob/master/R/derivatives.R)
+   to `R`'s symbolic differentiation tools
+3. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/term.R)
+   for interfacing with `bash`
+4. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/unifInt.R)
+   for using uniform distributions over subsets of the integers
+5. yes i really want to
+   [quit](https://github.com/stevencarlislewalker/setup/blob/master/R/q.R)!
