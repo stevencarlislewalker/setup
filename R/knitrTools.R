@@ -5,7 +5,7 @@
 ##' @return run chunks in \code{.GlobalEnv}
 ##' @export
 runChunks <- function(doc, chunkNames) {
-    docLines <- readLines(doc)
+    docLines <- unlist(strsplit(readLines(doc), ";"))
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
                      grep, x = docLines)
     chunkInds <- sapply(chunkNames, grep,
@@ -26,7 +26,7 @@ runChunks <- function(doc, chunkNames) {
 ##' ... it's good enough anyways)
 ##' @export
 chunkNames <- function(doc) {
-    docLines <- readLines(doc)
+    docLines <- unlist(strsplit(readLines(doc), ";"))
     chunkBegin <- grep(knitr::all_patterns$rnw$chunk.begin, docLines, value = TRUE)
     gsub(">>=", "", gsub("<<", "", sapply(strsplit(chunkBegin, ","), "[", 1)))
 }
@@ -37,7 +37,7 @@ chunkNames <- function(doc) {
 ##' @return run lines in \code{.GlobalEnv}
 ##' @export
 loadData <- function(doc) {
-    docLines <- readLines(doc)
+    docLines <- unlist(strsplit(readLines(doc), ";"))
     loadCommands <- grep("Rda",
                          grep("load", docLines, value = TRUE),
                          value = TRUE)
@@ -58,11 +58,11 @@ loadData <- function(doc) {
 ##' @export
 purlChunks <- function(doc, chunkNames, filePrefix = ".") {
     docShort <- paste(filePrefix, doc, sep = "")
-    docLines <- readLines(doc)
+    docLines <- unlist(strsplit(readLines(doc), ";"))
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
                      grep, x = docLines)
-    chunkInds <- sapply(chunkNames, grep,
-                        x = docLines[begEnd[,"chunk.begin"]])
+    allChunkNames <- chunkNames(doc)
+    chunkInds <- match(chunkNames, allChunkNames)
     codeInds <- mapply(":",
                        begEnd[chunkInds, "chunk.begin"],
                        begEnd[chunkInds, "chunk.end"])
