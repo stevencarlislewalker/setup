@@ -3,7 +3,12 @@ setup
 
 A personalized setup for `R`.  I've found it useful to add
 `library(setup)` to my `.Rprofile`, maybe others will too.  Always
-changing, never any goals for stabilization.  Current features:
+changing, never any goals for stabilization.
+
+The *guiding principle* of the `setup` package is to include
+functionality that is intended *exclusively for interative sessions*.
+
+Current features:
 
 1. utilities for processing parts of `knitr` chunks
 2. alternative interface to `R`'s symbolic differentiation tools
