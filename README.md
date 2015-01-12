@@ -6,10 +6,11 @@ A personalized setup for `R`.  I've found it useful to add
 changing, never any goals for stabilization.
 
 The *guiding principle* of the `setup` package is to include
-functionality that is intended *exclusively for interative sessions*.
+functionality that is intended *exclusively for interative sessions*
+and *not in scripts or packages that are intended for other users*.
 The recommended way to use `setup` is to
 [fork](https://help.github.com/articles/fork-a-repo/) it and modify as
-desired for your needs in interactive sessions.
+desired for your needs in interactive sessions.  
 
 Current features:
 
