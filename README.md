@@ -10,7 +10,7 @@ functionality that is intended *exclusively for interative sessions*
 and *not in scripts or packages that are intended for other users*.
 The recommended way to use `setup` is to
 [fork](https://help.github.com/articles/fork-a-repo/) it and modify as
-desired for your needs in interactive sessions.  
+desired for your needs in interactive sessions.
 
 Current features:
 

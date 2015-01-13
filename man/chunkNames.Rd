@@ -15,4 +15,7 @@ character string vector with names of chunks (basically
 \description{
 Get chunk names from a knitr document
 }
+\note{
+Every chunk must be named for consistent results
+}
 

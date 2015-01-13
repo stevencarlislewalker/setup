@@ -19,4 +19,7 @@ writes new files
 \description{
 Purl a subset of knitr chunks
 }
+\note{
+Every chunk must be named for consistent results
+}
 

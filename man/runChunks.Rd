@@ -16,4 +16,7 @@ run chunks in \code{.GlobalEnv}
 \description{
 Run a subset of knitr chunks
 }
+\note{
+Every chunk must be named for consistent results
+}
 

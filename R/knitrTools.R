@@ -64,6 +64,7 @@ loadData <- function(doc) {
 ##' @export
 purlChunks <- function(doc, chunkNames, filePrefix = ".") {
     docShort <- paste(filePrefix, doc, sep = "")
+    docR <- gsub(".Rnw", ".R", docShort)
     docLines <- unlist(strsplit(readLines(doc), ";"))
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
                      grep, x = docLines)
@@ -76,6 +77,7 @@ purlChunks <- function(doc, chunkNames, filePrefix = ".") {
     for(i in seq_along(codeInds)) {
         outLines <- c(outLines, docLines[codeInds[[i]]])
     }
-    writeLines(outLines, docShort)
-    purl(docShort)
+    # writeLines(outLines, docShort)
+    # purl(docShort)
+    purl(text = outLines, output = docR)
 }
