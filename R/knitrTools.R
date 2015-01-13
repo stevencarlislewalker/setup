@@ -60,11 +60,10 @@ loadData <- function(doc) {
 ##' @param chunkNames character string vector of chunk names
 ##' @param filePrefix character string to \code{\link{paste}} in front
 ##' of \code{doc}
-##' @return writes new files
+##' @return writes new \code{R} file
 ##' @export
 purlChunks <- function(doc, chunkNames, filePrefix = ".") {
-    docShort <- paste(filePrefix, doc, sep = "")
-    docR <- gsub(".Rnw", ".R", docShort)
+    docR <- gsub(".Rnw", ".R", docShort) ## FIXME: more accurate regexp?
     docLines <- unlist(strsplit(readLines(doc), ";"))
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
                      grep, x = docLines)
@@ -77,7 +76,5 @@ purlChunks <- function(doc, chunkNames, filePrefix = ".") {
     for(i in seq_along(codeInds)) {
         outLines <- c(outLines, docLines[codeInds[[i]]])
     }
-    # writeLines(outLines, docShort)
-    # purl(docShort)
     purl(text = outLines, output = docR)
 }

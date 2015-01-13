@@ -14,7 +14,7 @@ purlChunks(doc, chunkNames, filePrefix = ".")
 of \code{doc}}
 }
 \value{
-writes new files
+writes new \code{R} file
 }
 \description{
 Purl a subset of knitr chunks
