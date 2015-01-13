@@ -63,6 +63,7 @@ loadData <- function(doc) {
 ##' @return writes new \code{R} file
 ##' @export
 purlChunks <- function(doc, chunkNames, filePrefix = ".") {
+    docShort <- paste(filePrefix, doc, sep = "")
     docR <- gsub(".Rnw", ".R", docShort) ## FIXME: more accurate regexp?
     docLines <- unlist(strsplit(readLines(doc), ";"))
     begEnd <- sapply(knitr::all_patterns$rnw[c("chunk.begin", "chunk.end")],
