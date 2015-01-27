@@ -1,7 +1,7 @@
 ##' Count number of insertions
 ##'
 ##' @param dir git repo
-##' @param args additional arguments for \code{git log}
+##' @param args additional arguments for \code{git log} (e.g. a filename)
 ##' @return total number of additions
 ##' @export
 gitLines <- function(dir = ".", args = NULL) {

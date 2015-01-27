@@ -8,7 +8,7 @@ gitLines(dir = ".", args = NULL)
 \arguments{
 \item{dir}{git repo}
 
-\item{args}{additional arguments for \code{git log}}
+\item{args}{additional arguments for \code{git log} (e.g. a filename)}
 }
 \value{
 total number of additions
