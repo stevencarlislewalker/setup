@@ -3,7 +3,7 @@
 \alias{rmat}
 \title{Random matrix}
 \usage{
-rmat(rfunc, nrow = 1, ncol = 1, ...)
+rmat(nrow = 1, ncol = 1, rfunc = rnorm, ...)
 }
 \arguments{
 \item{rfunc}{an \code{r} function (e.g. \code{\link{rnorm}})}
