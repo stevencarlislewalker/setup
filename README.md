@@ -24,3 +24,5 @@ Current features:
    for using uniform distributions over subsets of the integers
 5. yes i really want to
    [quit](https://github.com/stevencarlislewalker/setup/blob/master/R/q.R)!
+6. [tools](https://github.com/stevencarlislewalker/setup/blob/master/R/gitTools.R)
+   for checking your progress on a [git](http://git-scm.com/) projects
