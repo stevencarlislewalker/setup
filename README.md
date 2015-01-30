@@ -38,7 +38,7 @@ Current features
 Example
 -------
 
-```
+```{make}
 PKG = lme4
 TAR = $(shell Rscript -e "tarName(\"$(PKG)\")")
 BUILD = R CMD build --no-build-vignettes
