@@ -36,7 +36,7 @@ desired for your needs in interactive sessions.
 
 ### Examples
 
-Easy random matrices!
+Quick random matrices!
 ```{r}
 rmat(5, 3)
 ##             [,1]       [,2]       [,3]
