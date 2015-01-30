@@ -34,7 +34,19 @@ desired for your needs in interactive sessions.
 7. yes i really want to
    [quit](https://github.com/stevencarlislewalker/setup/blob/master/R/q.R)!
 
-### Example
+### Examples
+
+Symbolic differentiation without expressions!
+```{r}
+gradient("(x^2)/y", c("x", "y"))
+##       gradient
+## x      2 * x/y
+## y -((x^2)/y^2)
+hessian("(x^2)/y", c("x", "y"))
+##              x                       y
+## x          2/y            -(2 * x/y^2)
+## y -(2 * x/y^2) (x^2) * (2 * y)/(y^2)^2
+```
 
 Using
 [`tarName`](https://github.com/stevencarlislewalker/setup/blob/master/R/descriptionTools.R)
