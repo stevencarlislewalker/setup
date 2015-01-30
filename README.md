@@ -5,6 +5,10 @@ A personalized setup for `R`.  I've found it useful to add
 `library(setup)` to my `.Rprofile`, maybe others will too.  Always
 changing, never any goals for stabilization.
 
+```{r}
+library("setup", quietly = TRUE, warn.conflicts = FALSE)
+```
+
 The *guiding principle* of the `setup` package is to include
 functionality that is intended *exclusively for interative sessions*
 and *not in scripts or packages that are intended for other users*.
