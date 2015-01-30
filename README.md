@@ -27,16 +27,18 @@ desired for your needs in interactive sessions.
    for makefiles
 4. [alternative interface](https://github.com/stevencarlislewalker/setup/blob/master/R/derivatives.R)
    to `R`'s symbolic differentiation tools
-5. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/unifInt.R)
+5. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/rmat.R)
+   for random matrices
+6. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/unifInt.R)
    for using uniform distributions over subsets of the integers
-6. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/term.R)
+7. [sugar](https://github.com/stevencarlislewalker/setup/blob/master/R/term.R)
    for interfacing with `bash`
-7. yes i really want to
+8. yes i really want to
    [quit](https://github.com/stevencarlislewalker/setup/blob/master/R/q.R)!
 
 ### Examples
 
-Quick random matrices!
+Quick [random matrices](https://github.com/stevencarlislewalker/setup/blob/master/R/rmat.R)!
 ```{r}
 rmat(5, 3)
 ##             [,1]       [,2]       [,3]
@@ -47,7 +49,8 @@ rmat(5, 3)
 ## [5,] -0.47383856 -2.0638588  0.4354084
 ```
 
-Symbolic differentiation without expressions!
+[Symbolic differentiation](https://github.com/stevencarlislewalker/setup/blob/master/R/derivatives.R)
+without expressions!
 ```{r}
 gradient("(x^2)/y", c("x", "y"))
 ##       gradient
