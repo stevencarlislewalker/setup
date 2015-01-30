@@ -16,8 +16,7 @@ The recommended way to use `setup` is to
 [fork](https://help.github.com/articles/fork-a-repo/) it and modify as
 desired for your needs in interactive sessions.
 
-Current features
-----------------
+### Current features
 
 1. [utilities](https://github.com/stevencarlislewalker/setup/blob/master/R/knitrTools.R)
    for processing parts of `knitr` chunks
@@ -35,9 +34,11 @@ Current features
 7. yes i really want to
    [quit](https://github.com/stevencarlislewalker/setup/blob/master/R/q.R)!
 
-Example
--------
+### Example
 
+Using
+[`tarName`](https://github.com/stevencarlislewalker/setup/blob/master/R/descriptionTools.R)
+in a makefile.
 ```{make}
 PKG = lme4
 TAR = $(shell Rscript -e "tarName(\"$(PKG)\")")
