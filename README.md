@@ -36,6 +36,17 @@ desired for your needs in interactive sessions.
 
 ### Examples
 
+Easy random matrices!
+```{r}
+rmat(5, 3)
+##             [,1]       [,2]       [,3]
+## [1,] -0.66632144  1.3042986  0.1259268
+## [2,] -0.75127404 -1.2725709 -0.1596205
+## [3,] -0.46391447 -1.1113941 -1.3869535
+## [4,]  0.07424689  0.8562972  1.4712344
+## [5,] -0.47383856 -2.0638588  0.4354084
+```
+
 Symbolic differentiation without expressions!
 ```{r}
 gradient("(x^2)/y", c("x", "y"))
